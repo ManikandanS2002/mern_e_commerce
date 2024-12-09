@@ -13,11 +13,12 @@ export default defineConfig({
     },
   },
   build: {
+    chunkSizeWarningLimit:2000,
     rollupOptions: {
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            return 'vendor'; // Split vendor dependencies into a separate chunk
+            return 'vendor'; 
           }
         },
       },
