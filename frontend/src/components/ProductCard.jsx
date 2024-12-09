@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import { ShoppingCart } from "lucide-react";
-import { useUserStore } from "../stores/useUserStore";
+import { useUserStore } from "../Stores/useUserStore";
 import { useCartStore } from "../Stores/useCartStore";
 
 
