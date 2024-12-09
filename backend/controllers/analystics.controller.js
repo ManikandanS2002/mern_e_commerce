@@ -10,7 +10,6 @@ export const getAnalystics = async (req,res) => {
         const startDate = new Date(endDate.getTime() -7 * 24 * 60 * 60 * 1000);
 
         const dailySalesData = await getDailySales(startDate, endDate);
-        console.log(dailySalesData)
         res.json({
             analysticsData,
             dailySalesData
