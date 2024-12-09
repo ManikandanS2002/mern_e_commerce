@@ -30,12 +30,13 @@ app.use("/api/payments",paymentRoutes);
 app.use("/api/analystics",analysticsRoutes);
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname,"/frontend/dist")));
+    app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
-    app.get("*",(req,res) => {
-        app.use(express.static(path.join(__dirname, "/frontend/dist")));
-    })
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "/frontend/dist/index.html"));
+    });
 }
+
 
 app.listen(PORT, ()=> {
     console.log(`Server is Running on http://localhost:${PORT}`);
