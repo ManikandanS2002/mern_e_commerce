@@ -16,7 +16,7 @@ import { connectDB } from "./lib/db.js";
 const app = express();
 const PORT = process.env.PORT || 5001
 
-const _dirname = path.resolve()
+const __dirname = path.resolve()
 
 app.use(express.json({limit:"10mb"}));
 app.use(cookieParser());
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname,"/frontend/dist")));
 
     app.get("*",(req,res) => {
-        res.sendFile(path.resolve(__dirname,"frontend","dist","index.html"));
+        app.use(express.static(path.join(__dirname, "/frontend/dist")));
     })
 }
 
