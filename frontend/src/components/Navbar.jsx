@@ -1,7 +1,7 @@
 import React from "react";
 import { ShoppingCart, UserPlus, LogIn, LogOut, Lock } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useUserStore } from "../stores/useUserStore";
+import { useUserStore } from "../Stores/useUserStore";
 import { useCartStore } from "../Stores/useCartStore";
 
 const Navbar = () => {
